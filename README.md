@@ -24,7 +24,7 @@ Once cloned, navigate to the directory containing the files and open them in Pow
 
 ## Resources
 
-- [Clutch.Net YouTube Channel](https://www.youtube.com/user/clutchnet)
+- [Clutch.Net YouTube Channel](https://www.youtube.com/@clutch-net)
 - [Clutch.Net Blog](https://clutch.net/blog)
 
 ## Contributing

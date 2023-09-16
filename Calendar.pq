@@ -2,9 +2,9 @@
 // free to use under the MIT License. See project LICENSE for more details.
 // v 1.1 - Added MonthYear text version, in your model use the date version to sort
 let
-    Source = YourSourceTable, // Change to desired source
-    MinDate = Date.From(Date.StartOfYear(List.Min(Source[YourDateColumn]))), // Change this to date that will determine the start of your calendar
-    EndDate = Date.From(List.Max(Source[YourDateColumn])), // ...and end date year, so you will get the remaining dates in the year of the final record
+    Source = Sales, // Change to desired source
+    MinDate = Date.From(Date.StartOfYear(List.Min(Source[OrderDate]))), // Change this to date that will determine the start of your calendar
+    EndDate = Date.From(List.Max(Source[OrderDate])), // ...and end date year, so you will get the remaining dates in the year of the final record
     AllDates = List.Dates(MinDate, Duration.Days(EndDate - MinDate) + 1, #duration(1, 0, 0, 0)),
     
     InitialTable = Table.FromList(AllDates, Splitter.SplitByNothing()),

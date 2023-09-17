@@ -34,8 +34,9 @@ let
     AddPQDate = Table.AddColumn(AddPPDate, "PQDate", each Date.AddQuarters([CalendarDate], -1), Date.Type),
     AddPriorPeriodYear = Table.AddColumn(AddPQDate, "PriorPeriodYear", each Date.Year(Date.AddMonths([CalendarDate], -1)), Int64.Type),
     AddPYDate = Table.AddColumn(AddPriorPeriodYear, "PYDate", each Date.AddYears([CalendarDate], -1), Date.Type),
-    AddMonthYear = Table.AddColumn(AddPYDate, "MonthYear", each Text.Start(Date.MonthName([CalendarDate]),3) & " " & Text.End(Text.From(Date.Year([CalendarDate])),2)),   
-    AddMonthYearDate = Table.AddColumn(AddMonthYear, "AddMonthYear", each #date(Date.Year([CalendarDate]), Date.Month([CalendarDate]), 1)),
+    AddMonthYear = Table.AddColumn(AddPYDate, "MonthYear", each Text.Start(Date.MonthName([CalendarDate]),3) & " " & Text.End(Text.From(Date.Year([CalendarDate])),2)),  
+    IntermediateTable = Table.AddColumn(AddMonthYear, "MonthYearDate", each #date(Date.Year([CalendarDate]), Date.Month([CalendarDate]), 1)),
+    AddMonthYearDate = Table.TransformColumnTypes(IntermediateTable,{{"MonthYearDate", type date}}),
     //Fiscal Dates
     AddFiscalDate = Table.AddColumn(AddMonthYearDate, "FiscalDate", each 
         if Date.Month([CalendarDate]) < FiscalStartMonth then Date.AddYears([CalendarDate], -1) else [CalendarDate], Date.Type),

@@ -1,0 +1,58 @@
+// Measures for Diabolical Test
+// Clutch.Net tutorial and demo - Tom Sampson © Clutch.Net 2023
+// free to use under the MIT License. See project LICENSE for more details.
+
+// Distinct Customer Count
+// Clutch.Net tutorial and demo - Tom Sampson © Clutch.Net 2023
+// free to use under the MIT License. See project LICENSE for more details.
+Distinct Customer Count =
+CALCULATE(
+    DISTINCTCOUNT( SalesPivot[CustomerKey] ),
+    SalesPivot[RankCustDate] = 1
+)
+
+// CountWithin90Days
+// Clutch.Net tutorial and demo - Tom Sampson © Clutch.Net 2023
+// free to use under the MIT License. See project LICENSE for more details.
+CountWithin90Days =
+CALCULATE(
+    SUM( SalesPivot[FlagWithin90Days] ),
+    SalesPivot[RankCustDate] = 1
+)
+
+// CountWithin3Months
+// Clutch.Net tutorial and demo - Tom Sampson © Clutch.Net 2023
+// free to use under the MIT License. See project LICENSE for more details.
+CountWithin3Months = 
+CALCULATE(
+    SUM( SalesPivot[FlagWithin3Months] ),
+    SalesPivot[RankCustDate] = 1
+)
+
+// % Returned in 90d
+// Clutch.Net tutorial and demo - Tom Sampson © Clutch.Net 2023
+// free to use under the MIT License. See project LICENSE for more details.
+% Returned in 90d = 
+CALCULATE(
+    DIVIDE( [CountWithin90Days], [Distinct Customer Count] ),
+    SalesPivot[RankCustDate] = 1
+)
+
+// % Returned in 3mo
+// Clutch.Net tutorial and demo - Tom Sampson © Clutch.Net 2023
+// free to use under the MIT License. See project LICENSE for more details.
+% Returned in 3mo = 
+CALCULATE(
+    DIVIDE( [CountWithin3Months], [Distinct Customer Count] ),
+    SalesPivot[RankCustDate] = 1
+)
+
+
+
+
+
+
+
+
+
+

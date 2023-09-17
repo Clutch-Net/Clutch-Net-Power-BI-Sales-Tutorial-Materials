@@ -3,11 +3,10 @@
 // v 1.1 - 20230910 - Tom S - Added MonthYear text version, in your model use the date version to sort
 // v 1.2 - 20230917 - Tom S - Added configurable fiscal date choices
 let
-    Source = Sales,
-    MinDate = Date.From(Date.StartOfYear(List.Min(Source[OrderDate]))),
-    EndDate = Date.From(List.Max(Source[OrderDate])),
+    Source = Sales, // Change this to your source
+    MinDate = Date.From(Date.StartOfYear(List.Min(Source[OrderDate]))), // Change this to your source column, the calendar coverage will be based on this
+    EndDate = Date.From(List.Max(Source[OrderDate])), // this column choice should match the one you made on the line above
     AllDates = List.Dates(MinDate, Duration.Days(EndDate - MinDate) + 1, #duration(1, 0, 0, 0)),
-
     // Add a parameter for the fiscal year start month.
     // Set this based on your choice:
     // 1 for January (most U.S. companies)
@@ -15,10 +14,8 @@ let
     // 7 for July (for countries like Australia and the start of the federal government's fiscal year in Canada)
     // 10 for October (In the U.S., the federal government's fiscal year starts on October 1st and ends on September 30th)
     FiscalStartMonth = 1, // change this based on your choice
-
     InitialTable = Table.FromList(AllDates, Splitter.SplitByNothing()),
     RenamedTable = Table.RenameColumns(InitialTable,{{"Column1", "CalendarDate"}}),
-
     AddYear = Table.AddColumn(RenamedTable, "Year", each Date.Year([CalendarDate]), Int64.Type),
     AddQuarter = Table.AddColumn(AddYear, "Quarter", each Date.QuarterOfYear([CalendarDate]), Int64.Type),
     AddMonth = Table.AddColumn(AddQuarter, "Month", each Date.Month([CalendarDate]), Int64.Type),
@@ -36,37 +33,26 @@ let
     AddPQDate = Table.AddColumn(AddPPDate, "PQDate", each Date.AddQuarters([CalendarDate], -1), Date.Type),
     AddPriorPeriodYear = Table.AddColumn(AddPQDate, "PriorPeriodYear", each Date.Year(Date.AddMonths([CalendarDate], -1)), Int64.Type),
     AddPYDate = Table.AddColumn(AddPriorPeriodYear, "PYDate", each Date.AddYears([CalendarDate], -1), Date.Type),
-
-    // Fiscal
-    // Determine the FiscalDate based on the chosen FiscalStartMonth
     AddFiscalDate = Table.AddColumn(AddPYDate, "FiscalDate", each 
         if Date.Month([CalendarDate]) < FiscalStartMonth then Date.AddYears([CalendarDate], -1) else [CalendarDate]),
-
     AddFiscalYear = Table.AddColumn(AddFiscalDate, "FiscalYear", each Date.Year([FiscalDate])),
-
     AddFiscalQuarter = Table.AddColumn(AddFiscalYear, "FiscalQuarter", each 
         let 
             monthDiff = Date.Month([FiscalDate]) - FiscalStartMonth,
             adjustedMonthDiff = if monthDiff < 0 then monthDiff + 12 else monthDiff
         in 
             Number.RoundDown(adjustedMonthDiff / 3) + 1, Int64.Type),
-
     AddFiscalPeriod = Table.AddColumn(AddFiscalQuarter, "FiscalPeriod", each 
         let 
             monthDiff = Date.Month([FiscalDate]) - FiscalStartMonth,
             adjustedMonthDiff = if monthDiff < 0 then monthDiff + 12 else monthDiff
         in 
             adjustedMonthDiff + 1, Int64.Type),
-
     AddFiscalPPDate = Table.AddColumn(AddFiscalPeriod, "FiscalPPDate", each Date.AddMonths([FiscalDate], -1), Date.Type),
-
     AddFiscalPQDate = Table.AddColumn(AddFiscalPPDate, "FiscalPQDate", each Date.AddQuarters([FiscalDate], -1), Date.Type),
-
     AddFiscalPriorPeriodYear = Table.AddColumn(AddFiscalPQDate, "FiscalPriorPeriodYear", each Date.Year([FiscalPPDate]), Int64.Type),
-
     AddFiscalPYDate = Table.AddColumn(AddFiscalPQDate, "FiscalPYDate", each 
         Date.AddYears([FiscalDate], -1), Date.Type),    
-
     FinalTable = Table.TransformColumnTypes(AddFiscalPYDate,{{"CalendarDate", type date}, {"FiscalPYDate", type date}})
 in
     FinalTable

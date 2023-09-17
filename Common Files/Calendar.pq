@@ -34,7 +34,10 @@ let
     AddPQDate = Table.AddColumn(AddPPDate, "PQDate", each Date.AddQuarters([CalendarDate], -1), Date.Type),
     AddPriorPeriodYear = Table.AddColumn(AddPQDate, "PriorPeriodYear", each Date.Year(Date.AddMonths([CalendarDate], -1)), Int64.Type),
     AddPYDate = Table.AddColumn(AddPriorPeriodYear, "PYDate", each Date.AddYears([CalendarDate], -1), Date.Type),
-    AddFiscalDate = Table.AddColumn(AddPYDate, "FiscalDate", each 
+    AddMonthYear = Table.AddColumn(AddPYDate, "MonthYear", each Text.Start(Date.MonthName([CalendarDate]),3) & " " & Text.End(Text.From(Date.Year([CalendarDate])),2)),   
+    AddMonthYearDate = Table.AddColumn(AddMonthYear, "AddMonthYear", each #date(Date.Year([CalendarDate]), Date.Month([CalendarDate]), 1)),
+    //Fiscal Dates
+    AddFiscalDate = Table.AddColumn(AddMonthYearDate, "FiscalDate", each 
         if Date.Month([CalendarDate]) < FiscalStartMonth then Date.AddYears([CalendarDate], -1) else [CalendarDate], Date.Type),
     AddFiscalYear = Table.AddColumn(AddFiscalDate, "FiscalYear", each Date.Year([FiscalDate]), Int64.Type),
     AddFiscalQuarter = Table.AddColumn(AddFiscalYear, "FiscalQuarter", each 

@@ -1,209 +1,209 @@
 {
- "InstanceID": "c759d3b2-e507-417e-9daf-271c75d2ab06",
+  "InstanceID": "d5893983-914b-4404-b2ab-6332722770c1",
   "calculationgrouptables": [
     {
   "name": "_TemporalCalculations",
   "isHidden": true,
-  "lineageTag": "b638883a-8cc6-41e5-99fb-521d6f51b396",
-  "modifiedTime": "2023-09-02T21:45:24.25",
-  "structureModifiedTime": "2023-09-02T21:45:24.25",
+  "lineageTag": "2059cfa8-8cf2-481a-9723-d72a31f76f8e",
+  "modifiedTime": "2023-09-17T06:11:55.173333",
+  "structureModifiedTime": "2023-09-17T06:11:55.173333",
   "calculationGroup": {
     "precedence": 55,
-    "modifiedTime": "2023-09-02T21:45:24.25",
+    "modifiedTime": "2023-09-17T06:11:55.173333",
     "calculationItems": [
       {
         "name": "Current",
         "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nSELECTEDMEASURE( )",
         "ordinal": 0,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T06:11:55.173333"
       },
       {
         "name": "MTD",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[PeriodNumber]\n            = MAX( Calendar[PeriodNumber] )\n            && Calendar[CalendarDate] <= MAX( Calendar[CalendarDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Period]\n            = MAX( Calendar[Period] )\n            && Calendar[CalendarDate] <= MAX( Calendar[CalendarDate] )\n    )\n)",
         "ordinal": 1,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:31:55.826667"
       },
       {
         "name": "Prior MTD",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[PeriodNumber]\n            = MAX( Calendar[PeriodNumber] ) - 1\n            && Calendar[CalendarDate] <= MAX( Calendar[PPDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Period]\n            = MAX( Calendar[Period] ) - 1\n            && Calendar[CalendarDate] <= MAX( Calendar[PPDate] )\n    )\n)",
         "ordinal": 2,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:58.09"
       },
       {
         "name": "QTD",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[QuarterNumber]\n            = MAX( Calendar[QuarterNumber] )\n            && Calendar[CalendarDate] <= MAX( Calendar[CalendarDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Quarter]\n            = MAX( Calendar[Quarter] )\n            && Calendar[CalendarDate] <= MAX( Calendar[CalendarDate] )\n    )\n)",
         "ordinal": 3,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:29:28.91"
       },
       {
         "name": "Prior QTD",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[QuarterNumber]\n            = MAX( Calendar[QuarterNumber] ) - 1\n            && Calendar[CalendarDate] <= MAX( Calendar[PQDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Quarter]\n            = MAX( Calendar[Quarter] ) - 1\n            && Calendar[CalendarDate] <= MAX( Calendar[PQDate] )\n    )\n)",
         "ordinal": 4,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:58.09"
       },
       {
         "name": "YTD",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[YearNumber]\n            = MAX( Calendar[YearNumber] )\n            && Calendar[CalendarDate] <= MAX( Calendar[CalendarDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Year]\n            = MAX( Calendar[Year] )\n            && Calendar[CalendarDate] <= MAX( Calendar[CalendarDate] )\n    )\n)",
         "ordinal": 5,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:58.09"
       },
       {
         "name": "Prior YTD",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[YearNumber]\n            = MAX( Calendar[YearNumber] )\n            && Calendar[CalendarDate] <= MAX( Calendar[CalendarDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Year]\n            = MAX( Calendar[Year] )\n            && Calendar[CalendarDate] <= MAX( Calendar[CalendarDate] )\n    )\n)",
         "ordinal": 6,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:58.09"
       },
       {
         "name": "ITD",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[YearNumber]\n            = MAX( Calendar[YearNumber] )\n            && Calendar[CalendarDate] <= MAX( Calendar[CalendarDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Year]\n            = MAX( Calendar[Year] )\n            && Calendar[CalendarDate] <= MAX( Calendar[CalendarDate] )\n    )\n)",
         "ordinal": 7,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:58.09"
       },
       {
         "name": "Prior Per ITD",
         "description": "Prior Period Inception To Date",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[YearNumber]\n            = MAX( Calendar[PriorPeriodYearNumber] )\n            && Calendar[CalendarDate] <= MAX( Calendar[PPDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Year]\n            = MAX( Calendar[PriorPeriodYear] )\n            && Calendar[CalendarDate] <= MAX( Calendar[PPDate] )\n    )\n)",
         "ordinal": 8,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:58.09"
       },
       {
         "name": "YTotal",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[YearNumber]\n            = MAX( Calendar[YearNumber] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Year]\n            = MAX( Calendar[Year] )\n    )\n)",
         "ordinal": 9,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:58.09"
       },
       {
         "name": "PY YTotal",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[YearNumber]\n            = MAX( Calendar[YearNumber] ) - 1\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Year]\n            = MAX( Calendar[Year] ) - 1\n    )\n)",
         "ordinal": 10,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:58.09"
       },
       {
         "name": "PY",
         "description": "Prior Year",
         "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[CalendarDate] >= MIN( Calendar[PYDate] )\n            && Calendar[CalendarDate] <= MAX( Calendar[PYDate] )\n    )\n)",
         "ordinal": 11,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:17:07.76"
       },
       {
         "name": "PY MTD",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[PeriodNumber]\n            = MAX( Calendar[PeriodNumber] ) - 12\n            && Calendar[CalendarDate] <= MAX( Calendar[PYDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Period]\n            = MAX( Calendar[Period] ) - 12\n            && Calendar[CalendarDate] <= MAX( Calendar[PYDate] )\n    )\n)",
         "ordinal": 12,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:58.09"
       },
       {
         "name": "PY QTD",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[QuarterNumber]\n            = MAX( Calendar[QuarterNumber] ) - 4\n            && Calendar[CalendarDate] <= MAX( Calendar[PYDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Quarter]\n            = MAX( Calendar[Quarter] ) - 4\n            && Calendar[CalendarDate] <= MAX( Calendar[PYDate] )\n    )\n)",
         "ordinal": 13,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:58.09"
       },
       {
         "name": "PY YTD",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[YearNumber]\n            = MAX( Calendar[YearNumber] ) - 1\n            && Calendar[CalendarDate] <= MAX( Calendar[PYDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Year]\n            = MAX( Calendar[Year] ) - 1\n            && Calendar[CalendarDate] <= MAX( Calendar[PYDate] )\n    )\n)",
         "ordinal": 14,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:58.09"
       },
       {
         "name": "PY ITD",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[YearNumber]\n            = MAX( Calendar[YearNumber] ) - 1\n            && Calendar[CalendarDate] <= MAX( Calendar[PYDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Year]\n            = MAX( Calendar[Year] ) - 1\n            && Calendar[CalendarDate] <= MAX( Calendar[PYDate] )\n    )\n)",
         "ordinal": 15,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:58.09"
       },
       {
         "name": "YoY",
         "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nVAR PY =\n    CALCULATE(\n        SELECTEDMEASURE( ),\n        FILTER(\n            ALL( Calendar ),\n            Calendar[CalendarDate] >= MIN( Calendar[PYDate] )\n                && Calendar[CalendarDate] <= MAX( Calendar[PYDate] )\n        )\n    )\nVAR CY = SELECTEDMEASURE( )\nVAR Result = IF( NOT ISBLANK( CY ) && NOT ISBLANK( PY ), CY - PY )\nRETURN\n    Result",
         "ordinal": 16,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:17:07.76"
       },
       {
         "name": "Rolling 12",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[PeriodNumber]\n            >= MAX( Calendar[PeriodNumber] ) - 11\n            && Calendar[PeriodNumber]\n            <= MAX( Calendar[PeriodNumber] )\n            && Calendar[CalendarDate] <= MAX( Calendar[CalendarDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Period]\n            >= MAX( Calendar[Period] ) - 11\n            && Calendar[Period]\n            <= MAX( Calendar[Period] )\n            && Calendar[CalendarDate] <= MAX( Calendar[CalendarDate] )\n    )\n)",
         "ordinal": 17,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:58.09"
       },
       {
         "name": "P01",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[YearNumber]\n            = MAX( Calendar[YearNumber] )\n            && Calendar[PeriodNum] = 1\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Year]\n            = MAX( Calendar[Year] )\n            && Calendar[Period] = 1\n    )\n)",
         "ordinal": 18,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:57.946667"
       },
       {
         "name": "P02",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[YearNumber]\n            = MAX( Calendar[YearNumber] )\n            && Calendar[PeriodNum] = 2\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Year]\n            = MAX( Calendar[Year] )\n            && Calendar[Period] = 2\n    )\n)",
         "ordinal": 19,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:57.946667"
       },
       {
         "name": "P03",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[YearNumber]\n            = MAX( Calendar[YearNumber] )\n            && Calendar[PeriodNum] = 3\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Year]\n            = MAX( Calendar[Year] )\n            && Calendar[Period] = 3\n    )\n)",
         "ordinal": 20,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:57.946667"
       },
       {
         "name": "P04",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[YearNumber]\n            = MAX( Calendar[YearNumber] )\n            && Calendar[PeriodNum] = 4\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Year]\n            = MAX( Calendar[Year] )\n            && Calendar[Period] = 4\n    )\n)",
         "ordinal": 21,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:57.946667"
       },
       {
         "name": "P05",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[YearNumber]\n            = MAX( Calendar[YearNumber] )\n            && Calendar[PeriodNum] = 5\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Year]\n            = MAX( Calendar[Year] )\n            && Calendar[Period] = 5\n    )\n)",
         "ordinal": 22,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:57.946667"
       },
       {
         "name": "P06",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[YearNumber]\n            = MAX( Calendar[YearNumber] )\n            && Calendar[PeriodNum] = 6\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Year]\n            = MAX( Calendar[Year] )\n            && Calendar[Period] = 6\n    )\n)",
         "ordinal": 23,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:57.946667"
       },
       {
         "name": "P07",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[YearNumber]\n            = MAX( Calendar[YearNumber] )\n            && Calendar[PeriodNum] = 7\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Year]\n            = MAX( Calendar[Year] )\n            && Calendar[Period] = 7\n    )\n)",
         "ordinal": 24,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:57.946667"
       },
       {
         "name": "P08",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[YearNumber]\n            = MAX( Calendar[YearNumber] )\n            && Calendar[PeriodNum] = 8\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Year]\n            = MAX( Calendar[Year] )\n            && Calendar[Period] = 8\n    )\n)",
         "ordinal": 25,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:57.946667"
       },
       {
         "name": "P09",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[YearNumber]\n            = MAX( Calendar[YearNumber] )\n            && Calendar[PeriodNum] = 9\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Year]\n            = MAX( Calendar[Year] )\n            && Calendar[Period] = 9\n    )\n)",
         "ordinal": 26,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:57.946667"
       },
       {
         "name": "P10",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[YearNumber]\n            = MAX( Calendar[YearNumber] )\n            && Calendar[PeriodNum] = 10\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Year]\n            = MAX( Calendar[Year] )\n            && Calendar[Period] = 10\n    )\n)",
         "ordinal": 27,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:57.946667"
       },
       {
         "name": "P11",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[YearNumber]\n            = MAX( Calendar[YearNumber] )\n            && Calendar[PeriodNum] = 11\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Year]\n            = MAX( Calendar[Year] )\n            && Calendar[Period] = 11\n    )\n)",
         "ordinal": 28,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:57.946667"
       },
       {
         "name": "P12",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[YearNumber]\n            = MAX( Calendar[YearNumber] )\n            && Calendar[PeriodNum] = 12\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Year]\n            = MAX( Calendar[Year] )\n            && Calendar[Period] = 12\n    )\n)",
         "ordinal": 29,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:57.946667"
       },
       {
         "name": "P13",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[YearNumber]\n            = MAX( Calendar[YearNumber] )\n            && Calendar[PeriodNum] = 13\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Year]\n            = MAX( Calendar[Year] )\n            && Calendar[Period] = 13\n    )\n)",
         "ordinal": 30,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:57.946667"
       },
       {
         "name": "P14",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[YearNumber]\n            = MAX( Calendar[YearNumber] )\n            && Calendar[PeriodNum] = 14\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Year]\n            = MAX( Calendar[Year] )\n            && Calendar[Period] = 14\n    )\n)",
         "ordinal": 31,
-        "modifiedTime": "2023-09-02T21:45:24.25"
+        "modifiedTime": "2023-09-17T07:39:57.946667"
       }
     ]
   },
@@ -216,13 +216,13 @@
       "isUnique": true,
       "isKey": true,
       "isNullable": false,
-      "modifiedTime": "2023-09-02T21:45:56.32",
-      "structureModifiedTime": "2023-09-02T21:45:24.25",
+      "modifiedTime": "2023-09-17T07:40:22.42",
+      "structureModifiedTime": "2023-09-17T06:11:55.173333",
       "refreshedTime": "1699-12-31T00:00:00",
       "attributeHierarchy": {
         "state": "ready",
-        "modifiedTime": "2023-09-02T21:45:56.32",
-        "refreshedTime": "2023-09-02T21:45:56.32"
+        "modifiedTime": "2023-09-17T07:40:22.42",
+        "refreshedTime": "2023-09-17T07:40:22.42"
       }
     },
     {
@@ -231,13 +231,13 @@
       "sourceColumn": "Name",
       "sortByColumn": "Ordinal",
       "lineageTag": "0ae5959f-3140-4130-a5fc-db04e3b00928",
-      "modifiedTime": "2023-09-02T21:45:56.32",
-      "structureModifiedTime": "2023-09-02T21:45:24.25",
+      "modifiedTime": "2023-09-17T07:40:22.42",
+      "structureModifiedTime": "2023-09-17T06:11:55.173333",
       "refreshedTime": "1699-12-31T00:00:00",
       "attributeHierarchy": {
         "state": "ready",
-        "modifiedTime": "2023-09-02T21:45:56.323333",
-        "refreshedTime": "2023-09-02T21:45:56.323333"
+        "modifiedTime": "2023-09-17T07:40:22.42",
+        "refreshedTime": "2023-09-17T07:40:22.42"
       }
     },
     {
@@ -246,13 +246,13 @@
       "isHidden": true,
       "sourceColumn": "Ordinal",
       "lineageTag": "d56d32f2-ffdc-4d03-b1db-8026f8e23092",
-      "modifiedTime": "2023-09-02T21:45:56.32",
-      "structureModifiedTime": "2023-09-02T21:45:24.25",
+      "modifiedTime": "2023-09-17T07:40:22.42",
+      "structureModifiedTime": "2023-09-17T06:11:55.173333",
       "refreshedTime": "1699-12-31T00:00:00",
       "attributeHierarchy": {
         "state": "ready",
-        "modifiedTime": "2023-09-02T21:45:56.32",
-        "refreshedTime": "2023-09-02T21:45:56.32"
+        "modifiedTime": "2023-09-17T07:40:22.42",
+        "refreshedTime": "2023-09-17T07:40:22.42"
       }
     }
   ],
@@ -260,8 +260,8 @@
     {
       "name": "TemporalCalculationGroup",
       "state": "ready",
-      "modifiedTime": "2023-09-02T21:45:56.32",
-      "refreshedTime": "2023-09-02T21:45:56.32",
+      "modifiedTime": "2023-09-17T07:40:22.42",
+      "refreshedTime": "2023-09-17T07:40:22.42",
       "source": {
         "type": "calculationGroup"
       }

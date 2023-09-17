@@ -19,7 +19,8 @@ let
     AddYear = Table.AddColumn(RenamedTable, "Year", each Date.Year([CalendarDate]), Int64.Type),
     AddQuarter = Table.AddColumn(AddYear, "Quarter", each Date.QuarterOfYear([CalendarDate]), Int64.Type),
     AddMonth = Table.AddColumn(AddQuarter, "Month", each Date.Month([CalendarDate]), Int64.Type),
-    AddDay = Table.AddColumn(AddMonth, "Day", each Date.Day([CalendarDate]), Int64.Type),
+    AddPeriod = Table.AddColumn(AddMonth, "Period", each Date.Month([CalendarDate]), Int64.Type),
+    AddDay = Table.AddColumn(AddPeriod, "Day", each Date.Day([CalendarDate]), Int64.Type),
     AddWeekNumber = Table.AddColumn(AddDay, "WeekNumber", each Date.WeekOfYear([CalendarDate]), Int64.Type),
     AddWeekDay = Table.AddColumn(AddWeekNumber, "WeekDay", each Date.DayOfWeek([CalendarDate]) + 1, Int64.Type),
     AddMonthName = Table.AddColumn(AddWeekDay, "MonthName", each Date.ToText([CalendarDate], "MMMM"), Text.Type),
@@ -34,8 +35,8 @@ let
     AddPriorPeriodYear = Table.AddColumn(AddPQDate, "PriorPeriodYear", each Date.Year(Date.AddMonths([CalendarDate], -1)), Int64.Type),
     AddPYDate = Table.AddColumn(AddPriorPeriodYear, "PYDate", each Date.AddYears([CalendarDate], -1), Date.Type),
     AddFiscalDate = Table.AddColumn(AddPYDate, "FiscalDate", each 
-        if Date.Month([CalendarDate]) < FiscalStartMonth then Date.AddYears([CalendarDate], -1) else [CalendarDate]),
-    AddFiscalYear = Table.AddColumn(AddFiscalDate, "FiscalYear", each Date.Year([FiscalDate])),
+        if Date.Month([CalendarDate]) < FiscalStartMonth then Date.AddYears([CalendarDate], -1) else [CalendarDate], Date.Type),
+    AddFiscalYear = Table.AddColumn(AddFiscalDate, "FiscalYear", each Date.Year([FiscalDate]), Int64.Type),
     AddFiscalQuarter = Table.AddColumn(AddFiscalYear, "FiscalQuarter", each 
         let 
             monthDiff = Date.Month([FiscalDate]) - FiscalStartMonth,
@@ -51,7 +52,7 @@ let
     AddFiscalPPDate = Table.AddColumn(AddFiscalPeriod, "FiscalPPDate", each Date.AddMonths([FiscalDate], -1), Date.Type),
     AddFiscalPQDate = Table.AddColumn(AddFiscalPPDate, "FiscalPQDate", each Date.AddQuarters([FiscalDate], -1), Date.Type),
     AddFiscalPriorPeriodYear = Table.AddColumn(AddFiscalPQDate, "FiscalPriorPeriodYear", each Date.Year([FiscalPPDate]), Int64.Type),
-    AddFiscalPYDate = Table.AddColumn(AddFiscalPQDate, "FiscalPYDate", each 
+    AddFiscalPYDate = Table.AddColumn(AddFiscalPriorPeriodYear, "FiscalPYDate", each 
         Date.AddYears([FiscalDate], -1), Date.Type),    
     FinalTable = Table.TransformColumnTypes(AddFiscalPYDate,{{"CalendarDate", type date}, {"FiscalPYDate", type date}})
 in

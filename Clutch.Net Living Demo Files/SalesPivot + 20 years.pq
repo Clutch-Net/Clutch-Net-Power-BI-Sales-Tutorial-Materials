@@ -10,12 +10,15 @@ let
     // Promote headers
     PromotedHeaders = Table.PromoteHeaders(SalesData, [PromoteAllScalars=true]),
 
-    // Adjust the OrderDate by adding 20 years
-    AdjustedDate = Table.TransformColumns(PromotedHeaders, {"OrderDate", each Date.AddYears(_, 20)}),
+    // Adjust the OrderDate by adding 20 years and transform it to a Date type
+    AdjustedDate = Table.TransformColumns(PromotedHeaders, {"OrderDate", each Date.From(Date.AddYears(_, 20))}),
+
+    // Filter rows where OrderDate <= today's date
+    FilteredRows = Table.SelectRows(AdjustedDate, each [OrderDate] <= Date.From(DateTime.LocalNow())),    
 
     // Add DateKey column based on the Adjusted OrderDate. This is an integer version of the date
     DateKey = Table.AddColumn(
-        AdjustedDate, 
+        FilteredRows, 
         "DateKey", 
         each Text.From(Date.Year([OrderDate])) & Text.End(Text.PadStart(Text.From(Date.Month([OrderDate]), "en-US"), 2, "0"), 2) & Text.End(Text.PadStart(Text.From(Date.Day([OrderDate]), "en-US"), 2, "0"), 2)
     ),

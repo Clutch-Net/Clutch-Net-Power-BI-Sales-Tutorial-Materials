@@ -2,7 +2,7 @@
 // free to use under the MIT License. See project LICENSE for more details.
 let
     // Load the Sales data from the Excel file
-    Source = Excel.Workbook(File.Contents("D:\GitHub\BI Projects\Clutch Net Power BI Sales Tutorial Materials\Clutch-Net-Power-BI-Sales-Tutorial-Materials\Sample Company Data.xlsx"), null, true),
+    Source = Excel.Workbook(File.Contents("D:\GitHub\BI Projects\Clutch Net Power BI Sales Tutorial Materials\Clutch-Net-Power-BI-Sales-Tutorial-Materials\Data\Sample Company Data.xlsx"), null, true),
     SalesData = Source{[Item="Sales",Kind="Sheet"]}[Data],
 
     // Promote headers

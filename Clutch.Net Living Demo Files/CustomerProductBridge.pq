@@ -3,11 +3,7 @@
 
 let
     // Load data from the Excel file
-    Source = Excel.Workbook(
-        File.Contents("D:\GitHub\BI Projects\Clutch Net Power BI Sales Tutorial Materials\Clutch-Net-Power-BI-Sales-Tutorial-Materials\Sample Company Data.xlsx"), 
-        null, 
-        true
-    ),
+    Source = Excel.Workbook(File.Contents("D:\GitHub\BI Projects\Clutch Net Power BI Sales Tutorial Materials\Clutch-Net-Power-BI-Sales-Tutorial-Materials\Data\Sample Company Data.xlsx"), null, true),
     
     // Select the 'Sales' sheet
     Sales_Sheet = Source{[Item="Sales",Kind="Sheet"]}[Data],

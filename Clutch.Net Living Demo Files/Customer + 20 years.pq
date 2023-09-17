@@ -1,7 +1,7 @@
 // Customer + 20 years for Clutch.Net Tutorial & Demo - Tom Sampson © Clutch.Net 2023
 // free to use under the MIT License. See project LICENSE for more details.
 let
-    Source = Excel.Workbook(File.Contents("E:\Diabolical Test.xlsx"), null, true),
+    Source = Excel.Workbook(File.Contents("D:\GitHub\BI Projects\Clutch Net Power BI Sales Tutorial Materials\Clutch-Net-Power-BI-Sales-Tutorial-Materials\Data\Sample Company Data.xlsx"), null, true),
     Customers_Sheet = Source{[Item="Customers",Kind="Sheet"]}[Data],
     #"Promoted Headers" = Table.PromoteHeaders(Customers_Sheet, [PromoteAllScalars=true]),
     #"Adjusted BirthDate" = Table.TransformColumns(#"Promoted Headers", {"BirthDate", each Date.AddYears(_, 20)}),

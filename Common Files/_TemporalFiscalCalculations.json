@@ -1,246 +1,644 @@
 {
-  "InstanceID": "fc879ddd-c1fe-44e2-865e-9b066119025a",
+  "InstanceID": "42cb9afc-bd1b-4b61-a94a-e00bdfc48e77",
   "calculationgrouptables": [
     {
   "name": "_TemporalFiscalCalculations",
-  "isHidden": true,
-  "lineageTag": "c2a458e5-3b67-4275-aaa6-b02fee2c2f19",
-  "modifiedTime": "2023-09-17T06:11:55.173333",
-  "structureModifiedTime": "2023-09-17T06:11:55.173333",
+  "lineageTag": "dd6d978d-9d65-4ea0-b736-c3bee5f72c38",
+  "modifiedTime": "2023-09-20T16:41:08.973333",
+  "structureModifiedTime": "2023-09-20T06:28:46.33",
   "calculationGroup": {
     "precedence": 56,
-    "modifiedTime": "2023-09-17T06:11:55.173333",
+    "modifiedTime": "2023-09-20T06:28:46.346667",
     "calculationItems": [
       {
         "name": "Current",
         "description": "The base input measure with no temporal adjustments",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nSELECTEDMEASURE( )",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nSELECTEDMEASURE( )",
         "ordinal": 0,
-        "modifiedTime": "2023-09-17T06:11:55.173333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "YoY",
         "description": "Fiscal Year over Year",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nVAR PY =\n    CALCULATE(\n        SELECTEDMEASURE( ),\n        FILTER(\n            ALL( Calendar ),\n            Calendar[FiscalDate] >= MIN( Calendar[FiscalPYDate] )\n                && Calendar[FiscalDate] <= MAX( Calendar[FiscalPYDate] )\n        )\n    )\nVAR CY = SELECTEDMEASURE( )\nVAR Result = IF( NOT ISBLANK( CY ) && NOT ISBLANK( PY ), CY - PY )\nRETURN\n    Result",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nVAR PY =\r\n    CALCULATE(\r\n        SELECTEDMEASURE( ),\r\n        FILTER(\r\n            ALL( Calendar ),\r\n            Calendar[FiscalDate] >= MIN( Calendar[FiscalPYDate] )\r\n                && Calendar[FiscalDate] <= MAX( Calendar[FiscalPYDate] )\r\n        )\r\n    )\r\nVAR CY = SELECTEDMEASURE( )\r\nVAR Result = IF( NOT ISBLANK( CY ) && NOT ISBLANK( PY ), CY - PY )\r\nRETURN\r\n    Result",
         "ordinal": 1,
-        "modifiedTime": "2023-09-17T07:57:19.853333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "MTD",
         "description": "Fiscal Month to Date",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalPeriod]\n            = MAX( Calendar[FiscalPeriod] )\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalPeriod]\r\n            = MAX( Calendar[FiscalPeriod] )\r\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalDate] )\r\n    )\r\n)",
         "ordinal": 2,
-        "modifiedTime": "2023-09-17T07:57:19.853333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "Prior MTD",
         "description": "Fiscal Prior Month to Date",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalPeriod]\n            = MAX( Calendar[FiscalPeriod] ) - 1\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalPPDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalPeriod]\r\n            = MAX( Calendar[FiscalPeriod] ) - 1\r\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalPPDate] )\r\n    )\r\n)",
         "ordinal": 3,
-        "modifiedTime": "2023-09-17T07:57:19.853333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "QTD",
         "description": "Fiscal Quarter to Date",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalQuarter]\n            = MAX( Calendar[FiscalQuarter] )\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalQuarter]\r\n            = MAX( Calendar[FiscalQuarter] )\r\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalDate] )\r\n    )\r\n)",
         "ordinal": 4,
-        "modifiedTime": "2023-09-17T07:57:19.853333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "Prior QTD",
         "description": "Fiscal Prior Quarter to Date",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalQuarter]\n            = MAX( Calendar[FiscalQuarter] ) - 1\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalPQDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalQuarter]\r\n            = MAX( Calendar[FiscalQuarter] ) - 1\r\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalPQDate] )\r\n    )\r\n)",
         "ordinal": 5,
-        "modifiedTime": "2023-09-17T07:57:19.853333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "YTD",
         "description": "Fiscal Year to Date",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalYear]\n            = MAX( Calendar[FiscalYear] )\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalYear]\r\n            = MAX( Calendar[FiscalYear] )\r\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalDate] )\r\n    )\r\n)",
         "ordinal": 6,
-        "modifiedTime": "2023-09-17T07:57:19.853333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "Prior YTD",
         "description": "Fiscal Prior Year to Date",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalYear]\n            = MAX( Calendar[FiscalYear] )\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalYear]\r\n            = MAX( Calendar[FiscalYear] )\r\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalDate] )\r\n    )\r\n)",
         "ordinal": 7,
-        "modifiedTime": "2023-09-17T07:57:19.853333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "ITD",
         "description": "Fiscal Inception to Date",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalYear]\n            = MAX( Calendar[FiscalYear] )\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalYear]\r\n            = MAX( Calendar[FiscalYear] )\r\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalDate] )\r\n    )\r\n)",
         "ordinal": 8,
-        "modifiedTime": "2023-09-17T07:57:19.853333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "Prior Per ITD",
         "description": "Fiscal Prior Period Inception to Date",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalYear]\n            = MAX( Calendar[FiscalPriorPeriodYear] )\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalPPDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalYear]\r\n            = MAX( Calendar[FiscalPriorPeriodYear] )\r\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalPPDate] )\r\n    )\r\n)",
         "ordinal": 9,
-        "modifiedTime": "2023-09-17T07:57:19.853333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "YTotal",
         "description": "Fiscal Year Total",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalYear]\n            = MAX( Calendar[FiscalYear] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalYear]\r\n            = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
         "ordinal": 10,
-        "modifiedTime": "2023-09-17T07:57:19.853333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "PY YTotal",
         "description": "Fiscal Prior Year's Total",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalYear]\n            = MAX( Calendar[FiscalYear] ) - 1\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalYear]\r\n            = MAX( Calendar[FiscalYear] ) - 1\r\n    )\r\n)",
         "ordinal": 11,
-        "modifiedTime": "2023-09-17T07:57:19.853333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "PY",
         "description": "Fiscal Prior Year",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalDate] >= MIN( Calendar[FiscalPYDate] )\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalPYDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalDate] >= MIN( Calendar[FiscalPYDate] )\r\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalPYDate] )\r\n    )\r\n)",
         "ordinal": 12,
-        "modifiedTime": "2023-09-17T07:57:19.853333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "PY MTD",
         "description": "Fiscal Prior Year's Month to Date",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalPeriod]\n            = MAX( Calendar[FiscalPeriod] ) - 12\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalPYDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalPeriod]\r\n            = MAX( Calendar[FiscalPeriod] ) - 12\r\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalPYDate] )\r\n    )\r\n)",
         "ordinal": 13,
-        "modifiedTime": "2023-09-17T07:57:19.853333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "PY QTD",
         "description": "Fiscal Prior Year's Quarter to Date",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalQuarter]\n            = MAX( Calendar[FiscalQuarter] ) - 4\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalPYDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalQuarter]\r\n            = MAX( Calendar[FiscalQuarter] ) - 4\r\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalPYDate] )\r\n    )\r\n)",
         "ordinal": 14,
-        "modifiedTime": "2023-09-17T07:57:19.853333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "PY YTD",
         "description": "Fiscal Prior Year's Year to Date",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalYear]\n            = MAX( Calendar[FiscalYear] ) - 1\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalPYDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalYear]\r\n            = MAX( Calendar[FiscalYear] ) - 1\r\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalPYDate] )\r\n    )\r\n)",
         "ordinal": 15,
-        "modifiedTime": "2023-09-17T07:57:19.853333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "PY ITD",
         "description": "Fiscal Prior Year's Inception to Date",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalYear]\n            = MAX( Calendar[FiscalYear] ) - 1\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalPYDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalYear]\r\n            = MAX( Calendar[FiscalYear] ) - 1\r\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalPYDate] )\r\n    )\r\n)",
         "ordinal": 16,
-        "modifiedTime": "2023-09-17T07:57:19.853333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "Rolling 12",
         "description": "Fiscal Rolling 12 Periods",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalPeriod]\n            >= MAX( Calendar[FiscalPeriod] ) - 11\n            && Calendar[FiscalPeriod]\n            <= MAX( Calendar[FiscalPeriod] )\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalDate] )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalPeriod]\r\n            >= MAX( Calendar[FiscalPeriod] ) - 11\r\n            && Calendar[FiscalPeriod]\r\n            <= MAX( Calendar[FiscalPeriod] )\r\n            && Calendar[FiscalDate] <= MAX( Calendar[FiscalDate] )\r\n    )\r\n)",
         "ordinal": 17,
-        "modifiedTime": "2023-09-17T07:57:19.853333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "P01",
         "description": "Fiscal Period 1 only",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalYear]\n            = MAX( Calendar[FiscalYear] )\n            && Calendar[FiscalPeriod] = 1\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalYear]\r\n            = MAX( Calendar[FiscalYear] )\r\n            && Calendar[FiscalPeriod] = 1\r\n    )\r\n)",
         "ordinal": 18,
-        "modifiedTime": "2023-09-17T16:27:37.753333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "P02",
         "description": "Fiscal Period 2 only",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalYear]\n            = MAX( Calendar[FiscalYear] )\n            && Calendar[FiscalPeriod] = 2\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalYear]\r\n            = MAX( Calendar[FiscalYear] )\r\n            && Calendar[FiscalPeriod] = 2\r\n    )\r\n)",
         "ordinal": 19,
-        "modifiedTime": "2023-09-17T16:27:37.753333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "P03",
         "description": "Fiscal Period 3 only",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalYear]\n            = MAX( Calendar[FiscalYear] )\n            && Calendar[FiscalPeriod] = 3\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalYear]\r\n            = MAX( Calendar[FiscalYear] )\r\n            && Calendar[FiscalPeriod] = 3\r\n    )\r\n)",
         "ordinal": 20,
-        "modifiedTime": "2023-09-17T16:27:37.753333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "P04",
         "description": "Fiscal Period 4 only",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalYear]\n            = MAX( Calendar[FiscalYear] )\n            && Calendar[FiscalPeriod] = 4\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalYear]\r\n            = MAX( Calendar[FiscalYear] )\r\n            && Calendar[FiscalPeriod] = 4\r\n    )\r\n)",
         "ordinal": 21,
-        "modifiedTime": "2023-09-17T16:27:37.753333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "P05",
         "description": "Fiscal Period 5 only",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalYear]\n            = MAX( Calendar[FiscalYear] )\n            && Calendar[FiscalPeriod] = 5\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalYear]\r\n            = MAX( Calendar[FiscalYear] )\r\n            && Calendar[FiscalPeriod] = 5\r\n    )\r\n)",
         "ordinal": 22,
-        "modifiedTime": "2023-09-17T16:27:37.753333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "P06",
         "description": "Fiscal Period 6 only",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalYear]\n            = MAX( Calendar[FiscalYear] )\n            && Calendar[FiscalPeriod] = 6\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalYear]\r\n            = MAX( Calendar[FiscalYear] )\r\n            && Calendar[FiscalPeriod] = 6\r\n    )\r\n)",
         "ordinal": 23,
-        "modifiedTime": "2023-09-17T16:27:37.753333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "P07",
         "description": "Fiscal Period 7 only",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalYear]\n            = MAX( Calendar[FiscalYear] )\n            && Calendar[FiscalPeriod] = 7\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalYear]\r\n            = MAX( Calendar[FiscalYear] )\r\n            && Calendar[FiscalPeriod] = 7\r\n    )\r\n)",
         "ordinal": 24,
-        "modifiedTime": "2023-09-17T16:27:37.753333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "P08",
         "description": "Fiscal Period 8 only",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalYear]\n            = MAX( Calendar[FiscalYear] )\n            && Calendar[FiscalPeriod] = 8\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalYear]\r\n            = MAX( Calendar[FiscalYear] )\r\n            && Calendar[FiscalPeriod] = 8\r\n    )\r\n)",
         "ordinal": 25,
-        "modifiedTime": "2023-09-17T16:27:37.753333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "P09",
         "description": "Fiscal Period 9 only",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalYear]\n            = MAX( Calendar[FiscalYear] )\n            && Calendar[FiscalPeriod] = 9\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalYear]\r\n            = MAX( Calendar[FiscalYear] )\r\n            && Calendar[FiscalPeriod] = 9\r\n    )\r\n)",
         "ordinal": 26,
-        "modifiedTime": "2023-09-17T16:27:37.753333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "P10",
         "description": "Fiscal Period 10 only",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalYear]\n            = MAX( Calendar[FiscalYear] )\n            && Calendar[FiscalPeriod] = 10\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalYear]\r\n            = MAX( Calendar[FiscalYear] )\r\n            && Calendar[FiscalPeriod] = 10\r\n    )\r\n)",
         "ordinal": 27,
-        "modifiedTime": "2023-09-17T16:27:37.753333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "P11",
         "description": "Fiscal Period 11 only",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalYear]\n            = MAX( Calendar[FiscalYear] )\n            && Calendar[FiscalPeriod] = 11\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalYear]\r\n            = MAX( Calendar[FiscalYear] )\r\n            && Calendar[FiscalPeriod] = 11\r\n    )\r\n)",
         "ordinal": 28,
-        "modifiedTime": "2023-09-17T16:27:37.753333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "P12",
         "description": "Fiscal Period 12 only",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalYear]\n            = MAX( Calendar[FiscalYear] )\n            && Calendar[FiscalPeriod] = 12\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalYear]\r\n            = MAX( Calendar[FiscalYear] )\r\n            && Calendar[FiscalPeriod] = 12\r\n    )\r\n)",
         "ordinal": 29,
-        "modifiedTime": "2023-09-17T16:27:37.753333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "P13",
         "description": "Fiscal Period 13 only",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalYear]\n            = MAX( Calendar[FiscalYear] )\n            && Calendar[FiscalPeriod] = 13\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalYear]\r\n            = MAX( Calendar[FiscalYear] )\r\n            && Calendar[FiscalPeriod] = 13\r\n    )\r\n)",
         "ordinal": 30,
-        "modifiedTime": "2023-09-17T16:27:37.753333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "P14",
         "description": "Fiscal Period 14 only",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[FiscalYear]\n            = MAX( Calendar[FiscalYear] )\n            && Calendar[FiscalPeriod] = 14\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[FiscalYear]\r\n            = MAX( Calendar[FiscalYear] )\r\n            && Calendar[FiscalPeriod] = 14\r\n    )\r\n)",
         "ordinal": 31,
-        "modifiedTime": "2023-09-17T16:27:37.753333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
       },
       {
         "name": "PP",
         "description": "Fiscal Prior Period",
-        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34\nCALCULATE(\n    SELECTEDMEASURE( ),\n    FILTER(\n        ALL( Calendar ),\n        Calendar[Year] = \n            IF(\n                MAX(Calendar[FiscalPeriod]) = 1,\n                MAX(Calendar[FiscalYear]) - 1,\n                MAX(Calendar[FiscalYear])\n            )\n            && Calendar[FiscalPeriod] = \n            IF(\n                MAX(Calendar[FiscalPeriod]) = 1,\n                12,\n                MAX(Calendar[FiscalPeriod]) - 1\n            )\n    )\n)",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE( ),\r\n    FILTER(\r\n        ALL( Calendar ),\r\n        Calendar[Year] = \r\n            IF(\r\n                MAX(Calendar[FiscalPeriod]) = 1,\r\n                MAX(Calendar[FiscalYear]) - 1,\r\n                MAX(Calendar[FiscalYear])\r\n            )\r\n            && Calendar[FiscalPeriod] = \r\n            IF(\r\n                MAX(Calendar[FiscalPeriod]) = 1,\r\n                12,\r\n                MAX(Calendar[FiscalPeriod]) - 1\r\n            )\r\n    )\r\n)",
         "ordinal": 32,
-        "modifiedTime": "2023-09-17T16:27:37.753333"
+        "modifiedTime": "2023-09-20T06:28:46.346667"
+      },
+      {
+        "name": "Today",
+        "description": "Fiscal Prior Period",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        Calendar[FiscalDate] = MAX(Calendar[FiscalDate])\r\n    )\r\n)\r\n",
+        "ordinal": 33,
+        "modifiedTime": "2023-09-22T02:46:28.343333"
+      },
+      {
+        "name": "This Week",
+        "description": "Fiscal Prior Period",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        Calendar[RelativeWeek] = 0\r\n    )\r\n)\r\n",
+        "ordinal": 35,
+        "modifiedTime": "2023-09-21T22:52:59.56"
+      },
+      {
+        "name": "Last Week",
+        "description": "Fiscal Prior Period",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        Calendar[RelativeWeek] = -1\r\n    )\r\n)\r\n\r\n",
+        "ordinal": 34,
+        "modifiedTime": "2023-09-21T22:52:59.56"
+      },
+      {
+        "name": "PW",
+        "description": "Fiscal Prior Period",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    ALLEXCEPT(Calendar, Calendar[RelativeWeek]),  -- retain the context of RelativeWeek, remove all other filters\r\n    FILTER(\r\n        ALL(Calendar),\r\n        Calendar[RelativeWeek] = MAX(Calendar[RelativeWeek]) - 1\r\n    )\r\n)\r\n\r\n/*\r\n\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = WEEKNUM(TODAY()) - 1\r\n        && YEAR(Calendar[FiscalDate]) = YEAR(TODAY())\r\n    )\r\n)\r\n*/\r\n",
+        "ordinal": 34,
+        "modifiedTime": "2023-09-20T19:01:48.27"
+      },
+      {
+        "name": "WoW",
+        "description": "Fiscal Week over Week",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nVAR PW =\r\n    CALCULATE(\r\n        SELECTEDMEASURE(),\r\n        FILTER(\r\n            ALL(Calendar),\r\n            Calendar[RelativeWeek] = -1\r\n        )\r\n    )\r\n\r\nVAR CW = SELECTEDMEASURE()\r\n\r\nVAR Result = IF(NOT ISBLANK(CW) && NOT ISBLANK(PW), CW - PW)\r\n\r\nRETURN Result\r\n",
+        "ordinal": 1,
+        "modifiedTime": "2023-09-20T18:44:04.966667"
+      },
+      {
+        "name": "W01",
+        "description": "W01",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 1\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 36,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W02",
+        "description": "W02",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 2\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 37,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W03",
+        "description": "W03",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 3\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 38,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W04",
+        "description": "W04",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 4\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 39,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W05",
+        "description": "W05",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 5\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 40,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W06",
+        "description": "W06",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 6\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 41,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W07",
+        "description": "W07",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 7\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 42,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W08",
+        "description": "W08",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 8\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 43,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W09",
+        "description": "W09",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 9\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 44,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W10",
+        "description": "W10",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 10\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 45,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W11",
+        "description": "W11",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 11\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 46,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W12",
+        "description": "W12",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 12\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 47,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W13",
+        "description": "W13",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 13\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 48,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W14",
+        "description": "W14",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 14\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 49,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W15",
+        "description": "W15",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 15\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 50,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W16",
+        "description": "W16",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 16\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 51,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W17",
+        "description": "W17",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 17\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 52,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W18",
+        "description": "W18",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 18\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 53,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W19",
+        "description": "W19",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 19\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 54,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W20",
+        "description": "W20",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 20\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 55,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W21",
+        "description": "W21",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 21\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 56,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W22",
+        "description": "W22",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 22\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 57,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W23",
+        "description": "W23",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 23\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 58,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W24",
+        "description": "W24",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 24\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 59,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W25",
+        "description": "W25",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 25\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 60,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W26",
+        "description": "W26",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 26\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 61,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W27",
+        "description": "W27",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 27\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 62,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W28",
+        "description": "W28",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 28\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 63,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W29",
+        "description": "W29",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 29\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 64,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W30",
+        "description": "W30",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 30\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 65,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W31",
+        "description": "W31",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 31\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 66,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W32",
+        "description": "W32",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 32\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 67,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W33",
+        "description": "W33",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 33\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 68,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W34",
+        "description": "W34",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 34\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 69,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W35",
+        "description": "W35",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 35\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 70,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W36",
+        "description": "W36",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 36\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 71,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W37",
+        "description": "W37",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 37\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 72,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W38",
+        "description": "W38",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 38\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 73,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W39",
+        "description": "W39",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 39\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 74,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W40",
+        "description": "W40",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 40\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 75,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W41",
+        "description": "W41",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 41\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 76,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W42",
+        "description": "W42",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 42\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 77,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W43",
+        "description": "W43",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 43\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 78,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W44",
+        "description": "W44",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 44\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 79,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W45",
+        "description": "W45",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 45\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 80,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W46",
+        "description": "W46",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 46\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 81,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W47",
+        "description": "W47",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 47\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 82,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W48",
+        "description": "W48",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 48\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 83,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W49",
+        "description": "W49",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 49\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 84,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W50",
+        "description": "W50",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 50\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 85,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W51",
+        "description": "W51",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 51\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 86,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
+      },
+      {
+        "name": "W52",
+        "description": "W52",
+        "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\r\n// 2023-09-17 00:15:34\r\nCALCULATE(\r\n    SELECTEDMEASURE(),\r\n    FILTER(\r\n        ALL(Calendar),\r\n        WEEKNUM(Calendar[FiscalDate]) = 52\r\n        && YEAR(Calendar[FiscalDate]) = MAX( Calendar[FiscalYear] )\r\n    )\r\n)",
+        "ordinal": 87,
+        "modifiedTime": "2023-09-22T15:08:16.676667"
       }
     ]
   },
@@ -253,13 +651,13 @@
       "isUnique": true,
       "isKey": true,
       "isNullable": false,
-      "modifiedTime": "2023-09-17T16:34:02.57",
-      "structureModifiedTime": "2023-09-17T06:11:55.173333",
+      "state": "calculationNeeded",
+      "modifiedTime": "2023-09-20T06:28:46.346667",
+      "structureModifiedTime": "2023-09-20T06:28:46.33",
       "refreshedTime": "1699-12-31T00:00:00",
       "attributeHierarchy": {
-        "state": "ready",
-        "modifiedTime": "2023-09-17T16:34:02.57",
-        "refreshedTime": "2023-09-17T16:34:02.57"
+        "modifiedTime": "2023-09-20T06:28:46.33",
+        "refreshedTime": "1699-12-31T00:00:00"
       }
     },
     {
@@ -268,13 +666,13 @@
       "sourceColumn": "Name",
       "sortByColumn": "Ordinal",
       "lineageTag": "0ae5959f-3140-4130-a5fc-db04e3b00928",
-      "modifiedTime": "2023-09-17T16:34:02.57",
-      "structureModifiedTime": "2023-09-17T06:11:55.173333",
+      "state": "calculationNeeded",
+      "modifiedTime": "2023-09-20T06:28:46.33",
+      "structureModifiedTime": "2023-09-20T06:28:46.33",
       "refreshedTime": "1699-12-31T00:00:00",
       "attributeHierarchy": {
-        "state": "ready",
-        "modifiedTime": "2023-09-17T16:34:02.573333",
-        "refreshedTime": "2023-09-17T16:34:02.573333"
+        "modifiedTime": "2023-09-20T06:28:46.346667",
+        "refreshedTime": "1699-12-31T00:00:00"
       }
     },
     {
@@ -283,22 +681,21 @@
       "isHidden": true,
       "sourceColumn": "Ordinal",
       "lineageTag": "d56d32f2-ffdc-4d03-b1db-8026f8e23092",
-      "modifiedTime": "2023-09-17T16:34:02.57",
-      "structureModifiedTime": "2023-09-17T06:11:55.173333",
+      "state": "calculationNeeded",
+      "modifiedTime": "2023-09-20T06:28:46.33",
+      "structureModifiedTime": "2023-09-20T06:28:46.33",
       "refreshedTime": "1699-12-31T00:00:00",
       "attributeHierarchy": {
-        "state": "ready",
-        "modifiedTime": "2023-09-17T16:34:02.573333",
-        "refreshedTime": "2023-09-17T16:34:02.573333"
+        "modifiedTime": "2023-09-20T06:28:46.346667",
+        "refreshedTime": "1699-12-31T00:00:00"
       }
     }
   ],
   "partitions": [
     {
       "name": "TemporalCalculationGroup",
-      "state": "ready",
-      "modifiedTime": "2023-09-17T16:34:02.57",
-      "refreshedTime": "2023-09-17T16:34:02.57",
+      "modifiedTime": "2023-09-20T16:41:09.096667",
+      "refreshedTime": "1699-12-31T00:00:00",
       "source": {
         "type": "calculationGroup"
       }

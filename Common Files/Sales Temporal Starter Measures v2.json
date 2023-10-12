@@ -1,0 +1,472 @@
+{
+  "InstanceID": "10c61597-c5ee-459d-9ad0-e5d5cb5deba1",
+  "measures": [
+    {
+  "name": "Amt Sales Ext - P01",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - P01\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"P1\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext\\By Period",
+  "lineageTag": "6d70aa11-3fa5-4a1e-85b1-b5a8fea60fdc",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - P02",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - P02\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"P2\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext\\By Period",
+  "lineageTag": "0cf95928-4cbe-4981-a02b-0c77637ceb00",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - P03",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - P03\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"P3\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext\\By Period",
+  "lineageTag": "1ffea754-6b00-4139-b6b9-2e2e025edeb8",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - P04",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - P04\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"P4\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext\\By Period",
+  "lineageTag": "4e6e1a45-f0f3-4b22-8f66-a524250cf10f",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - P05",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - P05\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"P5\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext\\By Period",
+  "lineageTag": "6c3bc2f7-a9d4-4afc-b138-800dd6ece4ea",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - P06",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - P06\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"P6\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext\\By Period",
+  "lineageTag": "a88c9c92-c836-4cea-8984-db763839ba5f",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - P07",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - P07\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"P7\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext\\By Period",
+  "lineageTag": "b43687e7-f74b-4739-be99-8697f2d82037",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - P08",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - P08\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"P8\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext\\By Period",
+  "lineageTag": "2b62d12c-365b-4376-ba29-a8bb1accbdd1",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - P09",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - P09\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"P9\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext\\By Period",
+  "lineageTag": "a652f360-169d-4efb-b65c-f881a784a440",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - P10",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - P10\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"P10\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext\\By Period",
+  "lineageTag": "31e3f7cb-bd3c-404b-b87f-4f0193f2f3ac",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - P11",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - P11\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"P11\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext\\By Period",
+  "lineageTag": "27f2ced5-e903-4918-acd1-2dfef1ac2a9a",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - P12",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - P12\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"P12\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext\\By Period",
+  "lineageTag": "cf056b82-14e1-4f14-b131-b531eae36abc",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - P13",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - P13\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"P13\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext\\By Period",
+  "lineageTag": "7b2ed267-2deb-44a5-9093-3804e628e1cc",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - P14",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - P14\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"P14\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext\\By Period",
+  "lineageTag": "d3440739-b9ed-4895-af5c-185445dbc788",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - Current",
+  "description": "Amt Sales Ext - Current",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - Current\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"Current\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "33d7423b-5943-47de-8ba2-b094021839d0",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - ITD",
+  "description": "Amt Sales Ext  - Inception to Date",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - ITD\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"ITD\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "597ea8d1-95cf-4c16-a6e9-1a560890b07c",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - MTD",
+  "description": "Amt Sales Ext  - Month to Date",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - MTD\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"MTD\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "a8a6ef64-bea1-452e-bf92-9a06400d5c07",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - PP",
+  "description": "Amt Sales Ext  - Prior Period",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - PP\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"PP\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "3ec39b28-ce55-48ae-bca0-bff0e69bede4",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - PY",
+  "description": "Amt Sales Ext  - Year (Prior)",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - PY\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"PY\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "a8fb8568-136c-4c15-a64a-22078a680563",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - PY ITD",
+  "description": "Amt Sales Ext  - Year (Prior) Inception to Date",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - PY ITD\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"PY ITD\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "d37059c4-55fe-4a8f-b1ad-3be756d8c63a",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - PY MTD",
+  "description": "Amt Sales Ext  - Year (Prior) Month to Date",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - PY MTD\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"PY MTD\n        \"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "04db708f-9f48-4767-8b88-f14111cc6324",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - PY QTD",
+  "description": "Amt Sales Ext  - Year (Prior) Quarter to Date",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - PY QTD\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"PY QTD\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "9b1a9d92-f9da-4446-b7cc-6dadee03b067",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - PY YTD",
+  "description": "Amt Sales Ext  - Year (Prior) Year to Date",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - PY YTD\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"PY YTD\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "91a04956-ef24-4633-b188-7502f79bd10c",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - QTD",
+  "description": "Amt Sales Ext  - Quarter to Date",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - QTD\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"QTD\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "fecd1332-b052-4bd2-8802-209733d3c75d",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - YTD",
+  "description": "Amt Sales Ext  - Year to Date",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - YTD\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"YTD\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "f680427e-82a6-4a3a-90d5-220a3a34dd1f",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - YTotal",
+  "description": "Amt Sales Ext  - Year Total",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - YTotal\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"YTotal\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "891df93a-f0eb-452d-a23c-e1d00601505e",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext_input",
+  "description": "Amt Sales Ext  - Input Measure",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext_input\n\n-- I do this so later on we can add a switch for live currency conversion - Tom Sampson 20230901\nSUMX(Sales, Sales[OrderQuantity] * Sales[SalesAmount])",
+  "formatString": "#,##0",
+  "isHidden": true,
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "86736851-bda3-4e00-bb54-6b33c73be939",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05",
+  "annotations": [
+    {
+      "name": "PBI_FormatHint",
+      "value": "{\"isGeneralNumber\":true}",
+      "modifiedTime": "2023-09-17T08:46:34.05"
+    }
+  ]
+},
+    {
+  "name": "Amt Sales Ext vs PY",
+  "description": "Amt Sales Ext  - Current - Year (Prior)",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext vs PY\n\n[Amt Sales Ext - Current] - [Amt Sales Ext - PY]",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "9bfb5c1f-4ea5-4ad5-a60b-8658ebadb969",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - Current vs PY %",
+  "description": "Amt Sales Ext  - Current vs PY / PY",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - Current vs PY %\n\nDIVIDE (\n    [Amt Sales Ext vs PY],\n    [Amt Sales Ext - PY],\n    BLANK ( )\n)",
+  "formatString": "#,##0 %",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "1ab71159-a686-4ccd-9a95-5d19a34cbe2f",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext vs PY %",
+  "description": "[Amt Sales Ext vs PY] / [Amt Sales Ext PY] ",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext vs PY %\n\nIF (\n    [Amt Sales Ext vs PY] <> 0 && [Amt Sales Ext - PY] = 0,\n    1,\n    DIVIDE ( [Amt Sales Ext vs PY], [Amt Sales Ext - PY] )\n)",
+  "formatString": "0.00%;-0.00%;0.00%",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "ee8d5319-1967-494a-8585-1972e620de23",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext vs PY MTD %",
+  "description": "[Amt Sales Ext vs PY] / [Amt Sales Ext PY] | Month to Date: Calculation from beginning of period through date indicated",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext vs PY MTD %\n\nIF (\n    [Amt Sales Ext vs PY MTD] <> 0 && [Amt Sales Ext - PY MTD] = 0,\n    1,\n    DIVIDE (\n        [Amt Sales Ext vs PY MTD],\n        [Amt Sales Ext - PY MTD]\n    )\n)",
+  "formatString": "0.00%;-0.00%;0.00%",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "f34b7c77-2829-4861-a56a-1afa88cb03c1",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext vs PY QTD %",
+  "description": "[Amt Sales Ext vs PY] / [Amt Sales Ext PY] | Quarter to Date: Calculation from beginning of period through date indicated",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext vs PY QTD %\n\nIF (\n    [Amt Sales Ext vs PY QTD] <> 0 && [Amt Sales Ext PY QTD] = 0,\n    1,\n    DIVIDE ( [Amt Sales Ext vs PY QTD], [Amt Sales Ext PY QTD] )\n)",
+  "formatString": "0.00%;-0.00%;0.00%",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "909c679e-f62b-419d-84c6-2472fa5aa496",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext vs PY YTD %",
+  "description": "[Amt Sales Ext vs PY] / [Amt Sales Ext PY] | Year to Date: Calculation from beginning of year through date indicated",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext vs PY YTD %\n\nIF (\n    [Amt Sales Ext vs PY YTD] <> 0 && [Amt Sales Ext PY YTD] = 0,\n    1,\n    DIVIDE ( [Amt Sales Ext vs PY YTD], [Amt Sales Ext PY YTD] )\n)",
+  "formatString": "0.00%;-0.00%;0.00%",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "4637332d-30da-49ea-bca1-1d5caf584c90",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext vs PY YTotal %",
+  "description": "[Amt Sales Ext vs PY] / [Amt Sales Ext PY] | Year Total: Calculation for entire year of date indicated",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext vs PY YTotal %\n\nIF (\n    [Amt Sales Ext vs PY YTotal] <> 0\n        && [Amt Sales Ext - PY YTotal] = 0,\n    1,\n    DIVIDE (\n        [Amt Sales Ext vs PY YTotal],\n        [Amt Sales Ext - PY YTotal]\n    )\n)",
+  "formatString": "0.00%;-0.00%;0.00%",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "f2a6ed01-cbcd-4ea3-a42c-18691b540838",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext vs PY MTD",
+  "description": "[Amt Sales Ext] - [Amt Sales Ext PY] | Month to Date: Calculation from beginning of period through date indicated",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext vs PY MTD\n\n[Amt Sales Ext - MTD] - [Amt Sales Ext - PY MTD]",
+  "formatString": "#,0",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "c763ee75-1df1-416e-90e0-acf7abc1b006",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext vs PY QTD",
+  "description": "[Amt Sales Ext] - [Amt Sales Ext PY] | Quarter to Date: Calculation from beginning of quarter through date indicated",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext vs PY QTD\n\n[Amt Sales Ext - QTD] - [Amt Sales Ext PY QTD]",
+  "formatString": "#,0",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "6d7aa09a-7737-4a19-92e0-36bc5dc8705c",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext vs PY YTD",
+  "description": "[Amt Sales Ext] - [Amt Sales Ext PY] | Year to Date: Calculation from beginning of year through date indicated",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext vs PY YTD\n\n[Amt Sales Ext - YTD] - [Amt Sales Ext PY YTD]",
+  "formatString": "#,0",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "d17895fa-aa78-4a53-a780-5b13f83c9fc8",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext PY QTD",
+  "description": "Amt Sales Ext | Year (Prior) | Quarter to Date: Calculation from beginning of quarter through date indicated",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext PY QTD\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"PY QTD\"\n    )\n)",
+  "formatString": "#,0",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "e6aef496-844b-488d-9aba-0c5c2b3fa1f7",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext PY YTD",
+  "description": "Amt Sales Ext | Year (Prior) | Year to Date: Calculation from beginning of year through date indicated",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext PY YTD\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"PY YTD\"\n    )\n)",
+  "formatString": "#,0",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "555c191b-d430-48ce-9f98-040dd0b00278",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext - PY YTotal",
+  "description": "Amt Sales Ext  - Year Total",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext - PY YTotal\n\nCALCULATE (\n    [Amt Sales Ext_input],\n    FILTER (\n        _TemporalFiscalCalculations,\n        _TemporalFiscalCalculations[Temporal Scope] = \"PY YTotal\"\n    )\n)",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "cb6f5515-6d87-4c82-8f45-d194d907d796",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext vs PY YTotal",
+  "description": "[Amt Sales Ext] - [Amt Sales Ext PY] | Total Year: Calculation for entire year of date indicated",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext vs PY YTotal\n\n[Amt Sales Ext - YTotal] - [Amt Sales Ext - PY YTotal]",
+  "formatString": "0.00%;-0.00%;0.00%",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "19c88763-6ad0-4ee5-bb96-364dd09a96dd",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T08:46:34.293333",
+  "structureModifiedTime": "2023-09-17T08:46:34.05"
+},
+    {
+  "name": "Amt Sales Ext vs PP",
+  "description": "Amt Sales Ext  - Current - Year (Prior)",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext vs PY\n\n[Amt Sales Ext - Current] - [Amt Sales Ext - PP]",
+  "formatString": "#,##0",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "d8a9e265-f304-43f3-a863-203f5875c3c4",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T16:53:24.073333",
+  "structureModifiedTime": "2023-09-17T16:53:23.803333"
+},
+    {
+  "name": "Amt Sales Ext vs PP %",
+  "description": "[Amt Sales Ext vs PY] / [Amt Sales Ext PY] ",
+  "expression": "// Tom Sampson © Clutch.Net 2023 MIT License\n// 2023-09-17 00:15:34 - Amt Sales Ext vs PY %\n\nIF(\n    [Amt Sales Ext vs PP] <> 0 && [Amt Sales Ext - PP] = 0,\n    1,\n    DIVIDE( [Amt Sales Ext vs PP], [Amt Sales Ext - PP] )\n)",
+  "formatString": "0.00%;-0.00%;0.00%",
+  "displayFolder": "Amt Sales Ext",
+  "lineageTag": "68e613cf-a791-4fef-8c97-436e308581e3",
+  "dataType": "variant",
+  "modifiedTime": "2023-09-17T16:53:35.553333",
+  "structureModifiedTime": "2023-09-17T16:53:23.803333"
+}
+  ]
+}
